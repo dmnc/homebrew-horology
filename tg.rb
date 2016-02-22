@@ -10,6 +10,7 @@ class Tg < Formula
   def install
     system "make"
     bin.install "tg"
+    bin.install "tg-lt"
   end
 
   test do
