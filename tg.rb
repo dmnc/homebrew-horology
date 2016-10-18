@@ -5,10 +5,6 @@ class Tg < Formula
   version "0.3.2"
   head "https://github.com/vacaboja/tg.git", :branch => "master"
 
-  # devel do
-  #   url "https://github.com/vacaboja/tg.git", :branch => "test"
-  # end
-
   depends_on "gtk+"
   depends_on "portaudio"
   depends_on "fftw"
