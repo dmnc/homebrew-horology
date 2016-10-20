@@ -1,8 +1,8 @@
 class Tg < Formula
   desc "Marcello Mamino's Watch Timing Software"
   homepage "https://github.com/vacaboja/tg"
-  url "https://github.com/vacaboja/tg.git", :revision => "d4acda0aa94c112228731d4ac1d51fa1d4e1944e"
-  version "0.3.2"
+  url "https://github.com/vacaboja/tg.git", :tag => "v0.4.0"
+  version "0.4.0"
   head "https://github.com/vacaboja/tg.git", :branch => "master"
 
   depends_on "gtk+"
@@ -11,11 +11,14 @@ class Tg < Formula
 
   def install
     system "make"
-    bin.install "tg"
-    bin.install "tg-lt"
+    bin.install "build/tg"
+    bin.install "build/tg-lt"
+    mv "#{bin}/tg", "#{bin}/tg-timer"
+    mv "#{bin}/tg-lt", "#{bin}/tg-timer-lt"
+    man1.install "docs/tg-timer.1.gz"
   end
 
   test do
-    system "#{bin}/tg"
+    system "man tg-timer"
   end
 end
