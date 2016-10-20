@@ -1,9 +1,9 @@
 class Tg < Formula
   desc "Marcello Mamino's Watch Timing Software"
   homepage "https://github.com/vacaboja/tg"
-  url "https://github.com/vacaboja/tg.git", :tag => "v0.4.0-test.1"
+  url "https://github.com/vacaboja/tg.git", :tag => "v0.4.0"
   version "0.4.0"
-  head "https://github.com/vacaboja/tg.git", :branch => "test"
+  head "https://github.com/vacaboja/tg.git", :branch => "master"
 
   depends_on "gtk+"
   depends_on "portaudio"
