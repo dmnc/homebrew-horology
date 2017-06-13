@@ -13,6 +13,7 @@ class Tg < Formula
   depends_on "gtk+3"
   depends_on "portaudio"
   depends_on "fftw"
+  depends_on "gnome-icon-theme"
 
   def install
     system "make"
