@@ -4,16 +4,18 @@ class Tg < Formula
   url "https://github.com/vacaboja/tg.git", :tag => "v0.5.0"
   head "https://github.com/vacaboja/tg.git", :branch => "master"
 
-  depends_on "automake" => :run
-  depends_on "libtool" => :run
+  depends_on "pkg-config" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "gtk+3"
   depends_on "portaudio"
   depends_on "fftw"
   depends_on "gnome-icon-theme"
 
   def install
-    system "export LIBTOOL=`which glibtool`"
-    system "export LIBTOOLIZE=`which glibtoolize`"
+    ENV["LIBTOOL"] = "glibtool"
+    ENV["LIBTOOLIZE"] = "glibtoolize"
     system "./autogen.sh"
     system "./configure"
     system "make"
@@ -22,6 +24,6 @@ class Tg < Formula
   end
 
   test do
-    system "man tg-timer"
+    system "man", "tg-timer"
   end
 end
