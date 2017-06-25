@@ -1,4 +1,4 @@
-class Tg < Formula
+class TgTimer < Formula
   desc "Marcello Mamino's Watch Timing Software"
   homepage "https://tg.ciovil.li"
   url "https://github.com/vacaboja/tg.git", :tag => "v0.5.0"
