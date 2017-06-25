@@ -1,7 +1,8 @@
 class TgTimer < Formula
-  desc "Marcello Mamino's Watch Timing Software"
+  desc "A program for timing mechanical watches"
   homepage "https://tg.ciovil.li"
-  url "https://github.com/vacaboja/tg.git", :tag => "v0.5.0"
+  url "https://github.com/vacaboja/tg/archive/v0.5.0.tar.gz"
+  sha256 "c88889bd391212d9104bca9918fb573a4ff96a752717b4a779d33f637c633ce7"
   head "https://github.com/vacaboja/tg.git", :branch => "master"
 
   depends_on "pkg-config" => :build
