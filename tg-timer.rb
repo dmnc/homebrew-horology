@@ -1,5 +1,5 @@
 class TgTimer < Formula
-  desc "A program for timing mechanical watches"
+  desc "Tool for timing mechanical watches"
   homepage "https://tg.ciovil.li"
   url "https://github.com/vacaboja/tg/archive/v0.5.0.tar.gz"
   sha256 "c88889bd391212d9104bca9918fb573a4ff96a752717b4a779d33f637c633ce7"
@@ -20,11 +20,14 @@ class TgTimer < Formula
     system "./autogen.sh"
     system "./configure"
     system "make"
+    system "make", "tg-timer-dbg"
+    prefix.install "tg-timer-dbg"
     bin.install "tg-timer"
     man1.install "docs/tg-timer.1"
   end
 
   test do
-    system "man", "tg-timer"
+    mkdir "#{testpath}/.config"
+    system "#{prefix}/tg-timer-dbg", "test"
   end
 end
